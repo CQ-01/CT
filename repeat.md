@@ -67,3 +67,87 @@ if remainder != 0:
     print('long', end=' ')
 print('int')
 ```
+### 빠른 입력
+```py
+import sys
+T = int(sys.stdin.readline().rstrip())
+for i in range(T):
+    A, B = map(int, sys.stdin.readline().rstrip().split())
+    print(A + B)
+```
+- sys.stdin.readline() : 빠른 input, 주피터노트북에서 동작하지 않음
+- rstrip() : 개행문자 제거
+
+### 출력결과 꾸미기
+```py
+T = int(input())
+for i in range(T):
+    A, B = map(int, input().split())
+    print('Case #', end='')
+    print(i + 1, end='')
+    print(': ', end='')
+    print(A + B)
+```
+- print에서 쉼표(,)로 구분 시 한칸의 간격 발생
+
+```py
+T = int(input())
+for i in range(T):
+    A, B = map(int, input().split())
+    print('Case #', end='')
+    print(i + 1, end='')
+    print(':', A, '+', B, '=', A + B)
+```
+- 상동
+
+### 별 찍기
+```py
+T = int(input())
+for i in range(1, T+1):
+    while i > 1:
+        print('*', end='')
+        i = i - 1
+    if i > 0:
+        print('*')
+        i = i - 1
+```
+```py
+# 클린코드 수정('23. 6. 26.)
+T = int(input())
+for i in range(1, T+1):
+    for _ in range(i):
+        print('*', end='')
+    print('')
+```
+
+### 별 우측정렬
+```py
+T = int(input())
+for i in range(1, T+1):
+    for _ in range(T-i):
+        print(' ', end='')
+    for _ in range(i):
+        print('*', end='')
+    print('')
+```
+
+### 무한반복
+```py
+while True:
+    A, B = map(int,input().split())
+    if A == 0 and B == 0:
+        break
+    else:
+        print(A + B)
+```
+- while True : 무한 반복
+
+### except error
+```py
+while True:
+    A, B = map(int,input().split())
+    if  A == None and B == None:
+        break
+    else:
+        print(A + B)
+```
